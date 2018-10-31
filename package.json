@@ -1,13 +1,16 @@
 {
   "name": "stream-getter-electron",
   "version": "0.0.0",
+  "main": "electron-main.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "electron": "ng build && electron .",
+    "electron:build:win": "ng build --prod && electron-packager . stream-getter-electron --overwrite --asar=true --platform=win32 --arch=ia32 --icon=src/assets/icons/icon_512x512_7dg_icon.ico --prune=true --out=release-builds --version-string.TheEditorStudio=CE --version-string.StreamGetterV2=CE --version-string.ProductName=\"流平台链接抓取工具\""
   },
   "private": true,
   "dependencies": {
@@ -19,9 +22,16 @@
     "@angular/http": "~7.0.0",
     "@angular/platform-browser": "~7.0.0",
     "@angular/platform-browser-dynamic": "~7.0.0",
+    "@angular/pwa": "^0.10.3",
     "@angular/router": "~7.0.0",
+    "@angular/service-worker": "~7.0.0",
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.2",
     "core-js": "^2.5.4",
+    "materialize-css": "^1.0.0-rc.2",
+    "ngx-electron": "^1.0.4",
     "rxjs": "~6.3.3",
+    "ws": "^6.1.0",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
@@ -29,10 +39,12 @@
     "@angular/cli": "~7.0.3",
     "@angular/compiler-cli": "~7.0.0",
     "@angular/language-service": "~7.0.0",
-    "@types/node": "~8.9.4",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
     "codelyzer": "~4.5.0",
+    "electron": "^3.0.6",
+    "electron-packager": "^12.2.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~3.0.0",

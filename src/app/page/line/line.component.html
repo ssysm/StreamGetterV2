@@ -1,0 +1,43 @@
+<div class="container">
+  <h3>Line Live流获取</h3>
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="col s12">
+          <p>请输入频道ID&amp;广播ID</p>
+          <span>
+            https://live.line.me/channels/
+          </span>
+          <div class="input-field inline">
+            <input id="channel_inline" name="channelId" type="text" [(ngModel)]="channelId">
+          </div>
+          <span>
+            /broadcast/
+          </span>
+          <div class="input-field inline">
+            <input id="broadcast_inline" name="broadcastId" type="text" [(ngModel)]="broadcastId">
+          </div>
+          <a class="btn" (click)="loadStreamList()">解流</a>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="row" id="table">
+      <table class="responsive-table highlight striped" *ngIf="showStreamListTable">
+          <thead>
+            <tr>
+              <th>类型</th>
+              <th>分辨率</th>
+              <th>链接</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let item of streamList">
+            <tr>
+              <td>{{item.isAudio? "音频" : "视频"}}</td>
+              <td>{{item.res}}</td>
+              <td>{{item.link}}</td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+</div>

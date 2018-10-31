@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+      <h3>请选择平台：</h3>
+  </div>
+  <div class="row">
+      <div class="col s3">
+          <a class="btn btn-large"[routerLink]="['/bilibili']" routerLinkActive="router-link-active" >Bilibili流</a>
+      </div>
+      <div class="col s3">
+          <a class="btn btn-large" [routerLink]="['/line']" routerLinkActive="router-link-active" >Line Live流</a>
+      </div>
+      <div class="col s3">
+          <a class="btn btn-large" [routerLink]="['/niconico']" routerLinkActive="router-link-active" >Niconico流</a>
+      </div>
+      <div class="col s3">
+        <a class="btn btn-large"[routerLink]="['/hibiki']" routerLinkActive="router-link-active" >Hibiki Radio流</a>
+    </div>
+  </div>
+  <div class="row">
+      <p>
+          目前本软件仅支持抓取<code>Bilibili,Line Live,Niconico,Hibiki Radio Station</code>的流 后续会考虑加入其他流服务的抓取
+      </p>
+  </div>
+</div>
