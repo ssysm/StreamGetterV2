@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NiconicoComponent } from './niconico.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ElectronService } from 'ngx-electron';
 
 describe('NiconicoComponent', () => {
   let component: NiconicoComponent;
@@ -8,7 +11,9 @@ describe('NiconicoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NiconicoComponent ]
+      declarations: [ NiconicoComponent ],
+      imports: [FormsModule, HttpClientModule],
+      providers: [ElectronService]
     })
     .compileComponents();
   }));

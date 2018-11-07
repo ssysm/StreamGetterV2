@@ -24,9 +24,10 @@ export class NiconicoComponent implements OnInit {
   isSocketAlive = true;
 
   ngOnInit() {
-    this.electronService.ipcRenderer.on('niconico_responseStream', this.loadStreamList.bind(this));
-    this.electronService.ipcRenderer.on('niconico_socketClosed', this.socketClosed.bind(this));
-    this.electronService.ipcRenderer.on('niconico_failed', this.handleFailed.bind(this));
+    // tslint:disable-next-line:max-line-length
+    this.electronService.ipcRenderer ? this.electronService.ipcRenderer.on('niconico_responseStream', this.loadStreamList.bind(this)) : null;
+    this.electronService.ipcRenderer ? this.electronService.ipcRenderer.on('niconico_socketClosed', this.socketClosed.bind(this)) : null;
+    this.electronService.ipcRenderer ? this.electronService.ipcRenderer.on('niconico_failed', this.handleFailed.bind(this)) : null;
   }
 
   requestLink() {
