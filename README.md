@@ -1,6 +1,7 @@
 # StreamGetter
 
 [![Build Status](https://travis-ci.org/ssysm/StreamGetterV2.svg?branch=master)](https://travis-ci.org/ssysm/StreamGetterV2)
+
 流媒体链接抓取工具 使用Electron&NodeJS(底层Runtime) + Angular6 (UI)框架
 
 ## 支持的流平台
