@@ -29,6 +29,7 @@ import { LineComponent } from './components/platforms/line/line.component';
 import { FfmpegCommandPipe } from './pipes/ffmpeg-command.pipe';
 import { NiconicoComponent } from './components/platforms/niconico/niconico.component';
 import { AboutComponent } from './components/about/about.component';
+import { OnsenagComponent } from './components/platforms/onsenag/onsenag.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -48,6 +49,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FfmpegCommandPipe,
     NiconicoComponent,
     AboutComponent,
+    OnsenagComponent,
   ],
   imports: [
     BrowserModule,

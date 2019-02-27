@@ -10,6 +10,7 @@
 - Line Live
 - Niconico 生放送(如何实现？[点击这里](https://blog.theeditorstudio.com/index.php/blog/niconico%E7%94%9F%E6%94%BE%E6%BA%90%E6%8A%93%E6%B5%81%E8%AF%A6%E8%A7%A3))
 - Hibiki Radio Station
+- Onsen.ag 音泉
 
 ## 使用展示
 

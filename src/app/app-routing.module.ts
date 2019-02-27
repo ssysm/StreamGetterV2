@@ -7,6 +7,7 @@ import { LineComponent } from './components/platforms/line/line.component';
 import { NiconicoComponent } from './components/platforms/niconico/niconico.component';
 import { SessionComponent } from './components/session/session.component';
 import { AboutComponent } from './components/about/about.component';
+import { OnsenagComponent } from './components/platforms/onsenag/onsenag.component';
 
 const routes: Routes = [
     {
@@ -28,6 +29,10 @@ const routes: Routes = [
       {
         path: 'niconico',
         component: NiconicoComponent
+      },
+      {
+        path: 'onsenag',
+        component: OnsenagComponent
       },
       {
           path: 'settings',
