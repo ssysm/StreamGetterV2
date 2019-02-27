@@ -1,0 +1,41 @@
+<div class="container">
+  <h3>Niconico 生放流获取</h3>
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="col s12">
+          <p>请输入直播间ID</p>
+          <span>
+            http://live2.nicovideo.jp/watch/lv
+          </span>
+          <div class="input-field inline">
+            <input id="videoId_inline" name="videoId" type="text" [(ngModel)]="videoId">
+          </div>
+          <a class="btn" (click)="requestLink()">解流</a>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="row">
+    <h3><b>请在录流时将保持本页面最前运行！</b></h3>
+  </div>
+  <div class="row" id="table" *ngIf="showStreamListTable">
+    <a class="btn" (click)="closeSocketRequest()" *ngIf="!isSocketRequestClosed" >关闭心跳包链接</a>
+    <table class="responsive-table highlight striped">
+      <thead>
+      <tr>
+        <th>类型</th>
+        <th>分辨率</th>
+        <th>链接</th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let item of streamList">
+      <tr>
+        <td>视频</td>
+        <td>high</td>
+        <td>{{item.url}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

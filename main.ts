@@ -13,10 +13,16 @@ function createWindow() {
 
   // Create the browser window.
   win = new BrowserWindow({
-    x: 0,
-    y: 0,
-    width: size.width,
-    height: size.height
+    x: size.width / 4,
+    y: size.height / 4,
+    width: size.width / 2,
+    height: (size.height / 2),
+    minWidth: 1280,
+    minHeight: 640,
+    title: 'Stream Getter::流平台抓取工具',
+    webPreferences: {
+      webSecurity: false
+    }
   });
 
   if (serve) {

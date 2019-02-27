@@ -1,0 +1,24 @@
+<nav class="blue lighten-2">
+  <a href="#" class="brand-logo right">StreamGetter</a>
+
+  <ul class="sidenav sidenav-fixed">
+
+    <li><a class="subheader"><i class="material-icons">laptop</i>平台</a></li>
+    <li>
+      <div class="search inline">
+        <input id="search" placeholder="搜索平台">
+        <div class="search-results"></div>
+      </div>
+    </li>
+    <li><a [routerLink]="['/bilibili']" routerLinkActive="active">Bilibili</a></li>
+    <li><a [routerLink]="['/line']" routerLinkActive="active">Line Live</a></li>
+    <li><a [routerLink]="['/hibiki']" routerLinkActive="active">HiBiKi Radio</a></li>
+    <li><a [routerLink]="['/niconico']" routerLinkActive="active">Niconico 生放</a></li>
+
+    <li><div class="divider"></div></li>
+    <li><a class="subheader"><i class="material-icons">settings</i>设置</a></li>
+    <li><a [routerLink]="['/settings','session']" routerLinkActive="active">账户Session管理</a></li>
+    <li><a [routerLink]="['/settings','about']" routerLinkActive="active">关于</a></li>
+    <li><span class="subheader">StreamGetter V2.1.1 <span style="display: inline-block; text-align: right; margin: 0px; -moz-transform: scaleX(-1); -o-transform: scaleX(-1); -webkit-transform: scaleX(-1); transform: scaleX(-1); filter: FlipH; -ms-filter: “FlipH”;">&copy;</span>GPLv3.0</span>
+  </ul>
+</nav>
