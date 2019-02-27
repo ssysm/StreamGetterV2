@@ -1,5 +1,6 @@
 {
-  "productName": "angular-electron",
+  "productName": "StreamGetterV2",
+  "appId": "com.theeditorstudio.streamgetter",
   "directories": {
     "output": "release/"
   },

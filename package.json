@@ -1,7 +1,7 @@
 {
   "name": "stream-getter-v2",
-  "version": "2.1.0",
-  "description": "Stream Getter",
+  "version": "2.1.1",
+  "description": "流服务平台链接抓取工具",
   "homepage": "https://github.com/ssysm/StreamGetterV2",
   "author": {
     "name": "ssysm",
