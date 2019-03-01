@@ -1,0 +1,47 @@
+<div class="container">
+  <h3>微博直播流获取</h3>
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="col s12">
+          <p>请输入节目ID</p>
+          <span>
+            http://live.weibo.com/show?id=
+          </span>
+          <div class="input-field inline">
+            <input style="width:200px" id="showId_inline" name="showId" type="text" [(ngModel)]="showId">
+          </div>
+          <a class="btn" (click)="loadStreamList()">解流</a>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="row">
+    <div class="col s4">
+      <label for="uid">微博用户ID</label>
+      <input name="uid" type="text" [(ngModel)]="uid">
+    </div>
+    <div class="col s4">
+      <label for="expiresHours">保活时长（小时）</label>
+      <input name="expiresHours" disabled class="disbaled" type="number" min="1" max="4" [(ngModel)]="expiresHours">
+    </div>
+  </div>
+  <div class="row" id="table" *ngIf="showStreamListTable">
+    <table class="responsive-table highlight striped">
+      <thead>
+        <tr>
+          <th>类型</th>
+          <th>分辨率</th>
+          <th>链接</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let item of streamList">
+        <tr>
+          <td>视频</td>
+          <td>{{item.title}}</td>
+          <td>{{item.url}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

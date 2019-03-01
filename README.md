@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/ssysm/StreamGetterV2.svg?branch=master)](https://travis-ci.org/ssysm/StreamGetterV2)
 
-流媒体链接抓取工具 使用Electron&NodeJS(底层Runtime) + Angular6 (UI)框架，使用GPL-V3.0许可证发行。
+流媒体链接抓取工具 使用Electron&NodeJS(底层Runtime) + Angular7 (UI)框架，使用GPL-V3.0许可证发行。
 
 ## 支持的流平台
 
@@ -11,6 +11,7 @@
 - Niconico 生放送(如何实现？[点击这里](https://blog.theeditorstudio.com/index.php/blog/niconico%E7%94%9F%E6%94%BE%E6%BA%90%E6%8A%93%E6%B5%81%E8%AF%A6%E8%A7%A3))
 - Hibiki Radio Station
 - Onsen.ag 音泉
+- Weibo.com 直播
 
 ## 使用展示
 

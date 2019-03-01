@@ -8,6 +8,7 @@ import { NiconicoComponent } from './components/platforms/niconico/niconico.comp
 import { SessionComponent } from './components/session/session.component';
 import { AboutComponent } from './components/about/about.component';
 import { OnsenagComponent } from './components/platforms/onsenag/onsenag.component';
+import { SinaLiveComponent } from './components/platforms/sina-live/sina-live.component';
 
 const routes: Routes = [
     {
@@ -33,6 +34,10 @@ const routes: Routes = [
       {
         path: 'onsenag',
         component: OnsenagComponent
+      },
+      {
+        path: 'sina-live',
+        component: SinaLiveComponent
       },
       {
           path: 'settings',

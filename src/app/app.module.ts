@@ -30,6 +30,7 @@ import { FfmpegCommandPipe } from './pipes/ffmpeg-command.pipe';
 import { NiconicoComponent } from './components/platforms/niconico/niconico.component';
 import { AboutComponent } from './components/about/about.component';
 import { OnsenagComponent } from './components/platforms/onsenag/onsenag.component';
+import { SinaLiveComponent } from './components/platforms/sina-live/sina-live.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -50,6 +51,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     NiconicoComponent,
     AboutComponent,
     OnsenagComponent,
+    SinaLiveComponent,
   ],
   imports: [
     BrowserModule,
