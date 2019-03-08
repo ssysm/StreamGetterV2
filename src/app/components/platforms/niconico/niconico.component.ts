@@ -3,6 +3,7 @@ import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
 import {ElectronService} from '../../../providers/electron.service';
 import {NiconicoService} from '../../../providers/platforms/niconico.service';
 
+declare var M: any;
 @Component({
   selector: 'app-niconico',
   templateUrl: './niconico.component.html',
@@ -17,6 +18,7 @@ export class NiconicoComponent implements OnInit, OnDestroy {
 
   videoId = 10010;
   broadcastId = 10010;
+  streamQuality = 'high';
 
   isSocketAlive = true;
 
@@ -27,9 +29,12 @@ export class NiconicoComponent implements OnInit, OnDestroy {
         this.handleSocketOpen = this.handleSocketOpen.bind(this);
         this.handleSocketMessage = this.handleSocketMessage.bind(this);
         this.closeSocketRequest = this.closeSocketRequest.bind(this);
+        this.changeStreamQuality = this.changeStreamQuality.bind(this);
       }
 
-  ngOnInit() {}
+  ngOnInit() {
+    M.AutoInit();
+  }
 
   requestLink() {
     this.niconicoService.requestLink(this.videoId)
@@ -54,6 +59,21 @@ export class NiconicoComponent implements OnInit, OnDestroy {
             });
   }
 
+  changeStreamQuality() {
+    this.socket.send(JSON.stringify({
+      'type': 'watch',
+      'body': {
+        'command': 'getstream',
+        'requirement': {
+          'protocol': 'hls',
+          'quality': this.streamQuality,
+          'isLowLatency': true
+        }
+      }
+    }));
+
+  }
+
   createSocket(socketURL, broadcastId) {
     this.socket = new WebSocket(socketURL);
     this.broadcastId = broadcastId;
@@ -64,6 +84,7 @@ export class NiconicoComponent implements OnInit, OnDestroy {
 
   handleSocketOpen() {
     console.log('Socket Opened');
+    this.isSocketRequestClosed = false;
     this.socket.send(JSON.stringify({
       type: 'watch',
       body: {
@@ -74,13 +95,16 @@ export class NiconicoComponent implements OnInit, OnDestroy {
           stream: {
             protocol: 'hls',
             requireNewStream: true,
-            priorStreamQuality: 'high',
+            streamQuality: this.streamQuality,
             isLowLatency: true
           },
           room: {isCommentable: true, protocol: 'webSocket'}
         }
       }
     }));
+    this.changeStreamQuality();
+    this.electronService.remote.dialog.showMessageBox(
+      {type: 'info', message: '请在录流时将保持本页面最前运行！'});
   }
 
   handleSocketMessage({data}) {
@@ -103,10 +127,11 @@ export class NiconicoComponent implements OnInit, OnDestroy {
           break;
         // m3u8播放列表
         case 'currentstream':
-          this.streamList = [{url: data.body.currentStream.uri}];
+          this.streamList = [
+            {url: data.body.currentStream.uri,
+              quality: data.body.currentStream.quality}
+          ];
           this.showStreamListTable = true;
-          this.electronService.remote.dialog.showMessageBox(
-              {type: 'info', message: '请在录流时将保持本页面最前运行！'});
           this.ref.detectChanges();
           console.log('Got stream playlist at ' + data.body.currentStream.uri);
           break;
@@ -129,5 +154,9 @@ export class NiconicoComponent implements OnInit, OnDestroy {
         {type: 'error', message: '请求错误 请检查直播ID'});
   }
 
-  ngOnDestroy() {}
+  ngOnDestroy() {
+    if (this.socket) {
+      this.closeSocketRequest();
+    }
+  }
 }
