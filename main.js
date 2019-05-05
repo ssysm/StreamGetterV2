@@ -13,10 +13,10 @@ function createWindow() {
     win = new electron_1.BrowserWindow({
         x: size.width / 4,
         y: size.height / 4,
-        width: size.width / 2,
-        height: (size.height / 2),
+        width: 1280,
+        height: 780,
         minWidth: 1280,
-        minHeight: 640,
+        minHeight: 710,
         title: 'Stream Getter::流平台抓取工具',
         webPreferences: {
             webSecurity: false

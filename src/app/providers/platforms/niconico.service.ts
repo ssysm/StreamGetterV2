@@ -16,8 +16,4 @@ export class NiconicoService {
    });
   }
 
-  public createSocket(socketURL) {
-    return new WebSocket(socketURL);
-  }
-
 }

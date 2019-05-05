@@ -11,6 +11,11 @@
     "typeRoots": [
       "node_modules/@types"
     ],
+    "baseUrl": "src",
+    "paths": {
+      "@api-srv/*": ["app/providers/platforms"],
+      "@api-impl/*": ["app/Interface/platforms"]
+    },
     "lib": [
       "es2017",
       "es2016",

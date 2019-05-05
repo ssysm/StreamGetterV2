@@ -17,20 +17,21 @@ import { ElectronService } from './providers/electron.service';
 import { WebviewDirective } from './directives/webview.directive';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent } from './views/pages/home/home.component';
 import { BilibiliService } from './providers/platforms/bilibili.service';
 import { HibikiService } from './providers/platforms/hibiki.service';
 import { LineService } from './providers/platforms/line.service';
-import { SessionComponent } from './components/session/session.component';
-import { NavbarComponent } from './components/particals/navbar/navbar.component';
-import { BilibiliComponent } from './components/platforms/bilibili/bilibili.component';
-import { HibikiComponent } from './components/platforms/hibiki/hibiki.component';
-import { LineComponent } from './components/platforms/line/line.component';
+import { SessionComponent } from './views/pages/session/session.component';
+import { NavbarComponent } from './views/particals/navbar/navbar.component';
+import { BilibiliComponent } from './views/pages/platforms/bilibili/bilibili.component';
+import { HibikiComponent } from './views/pages/platforms/hibiki/hibiki.component';
+import { LineComponent } from './views/pages/platforms/line/line.component';
 import { FfmpegCommandPipe } from './pipes/ffmpeg-command.pipe';
-import { NiconicoComponent } from './components/platforms/niconico/niconico.component';
-import { AboutComponent } from './components/about/about.component';
-import { OnsenagComponent } from './components/platforms/onsenag/onsenag.component';
-import { SinaLiveComponent } from './components/platforms/sina-live/sina-live.component';
+import { NiconicoComponent } from './views/pages/platforms/niconico/niconico.component';
+import { AboutComponent } from './views/pages/about/about.component';
+import { OnsenagComponent } from './views/pages/platforms/onsenag/onsenag.component';
+import { SinaLiveComponent } from './views/pages/platforms/sina-live/sina-live.component';
+import { UrlTableComponent } from './views/components/url-table/url-table.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -52,6 +53,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AboutComponent,
     OnsenagComponent,
     SinaLiveComponent,
+    UrlTableComponent,
   ],
   imports: [
     BrowserModule,

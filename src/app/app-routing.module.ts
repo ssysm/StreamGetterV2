@@ -1,14 +1,14 @@
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent } from './views/pages/home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { BilibiliComponent } from './components/platforms/bilibili/bilibili.component';
-import { HibikiComponent } from './components/platforms/hibiki/hibiki.component';
-import { LineComponent } from './components/platforms/line/line.component';
-import { NiconicoComponent } from './components/platforms/niconico/niconico.component';
-import { SessionComponent } from './components/session/session.component';
-import { AboutComponent } from './components/about/about.component';
-import { OnsenagComponent } from './components/platforms/onsenag/onsenag.component';
-import { SinaLiveComponent } from './components/platforms/sina-live/sina-live.component';
+import { BilibiliComponent } from './views/pages/platforms/bilibili/bilibili.component';
+import { HibikiComponent } from './views/pages/platforms/hibiki/hibiki.component';
+import { LineComponent } from './views/pages/platforms/line/line.component';
+import { NiconicoComponent } from './views/pages/platforms/niconico/niconico.component';
+import { SessionComponent } from './views/pages/session/session.component';
+import { AboutComponent } from './views/pages/about/about.component';
+import { OnsenagComponent } from './views/pages/platforms/onsenag/onsenag.component';
+import { SinaLiveComponent } from './views/pages/platforms/sina-live/sina-live.component';
 
 const routes: Routes = [
     {

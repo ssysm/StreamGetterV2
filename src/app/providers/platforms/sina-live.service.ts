@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -47,8 +48,8 @@ export class SinaLiveService {
     return 'http:' + this.base + '?' + this.query + '&sign=' + this.key;
   }
 
-  getStream(uriStr) {
-    return this.http.get(uriStr);
+  public getStream(uriStr: string): Observable<SinaLiveResponse.RootObject> {
+    return this.http.get<SinaLiveResponse.RootObject>(uriStr);
   }
 
 

@@ -5,6 +5,11 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "baseUrl": "src",
+    "paths": {
+      "@api-srv/*": ["app/providers/platforms"],
+      "@api-impl/*": ["app/Interface/platforms"]
+    },
     "target": "es5",
     "typeRoots": [
       "node_modules/@types"

@@ -1,0 +1,20 @@
+<div class="container">
+  <h3>Onsen.ag流获取</h3>
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="col s12">
+          <p>请输入节目名字</p>
+          <span>
+            http://www.onsen.ag/program/
+          </span>
+          <div class="input-field inline">
+            <input id="programName_inline" name="programName" type="text" [(ngModel)]="programName">
+          </div>
+          <a class="btn" (click)="loadStreamList()">解流</a>
+        </div>
+      </div>
+    </form>
+  </div>
+  <app-url-table [urlTable]="streamList" *ngIf="showStreamListTable"></app-url-table>
+</div>

@@ -1,0 +1,18 @@
+<div class="row" id="table">
+  <table class="responsive-table highlight striped" >
+    <thead>
+    <tr>
+      <th>类型</th>
+      <th>分辨率</th>
+      <th>链接</th>
+    </tr>
+    </thead>
+    <tbody *ngFor="let item of urlTable">
+    <tr>
+      <td>{{item.type}}</td>
+      <td>{{item.res}}</td>
+      <td>{{item.uri}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
